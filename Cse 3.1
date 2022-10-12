@@ -1,0 +1,11 @@
+import numpy as np
+data = {5, 2, 20, 5, 2, 58, 5, 2, 5, 2}
+mean = np.mean(data)
+sd = np.std(data)
+threshold = 2
+outliers = []
+for i in data:
+    z = (i-mean)/sd  # calculate z score
+    if abs(z) > threshold:  # identify outliers
+        outliers.append(i)  # add to empty list
+        print("the detected outliers are :", outliers)
